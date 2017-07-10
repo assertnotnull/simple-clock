@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang=fr-ca>
+<head>
+    <meta charset="utf-8">
+    <title>Simple clock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css">
+</head>
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <content></content>
+            </div>
+        </div>
+    </section>
+
+    <script type="riot/tag">
+        <content>
+            <h1 class="title" style="font-size: 7vw">{time}</h1>
+        
+            this.time = moment().format('LTS');
+
+            tick() {
+                this.update({ time: moment().format('LTS') });
+            }
+
+            var timer = setInterval(this.tick, 1000);
+
+            this.on('unmount', function() {
+                clearInterval(timer);
+            });
+
+            
+        </content>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.3.1/riot+compiler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script>
+        moment.locale('fr-ca');
+        riot.mount('*')
+    </script>
+</body>
+</html>
+</DOCTYPE>
