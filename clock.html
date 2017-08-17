@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Simple clock</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
 </head>
 <body>
-    <section class="hero is-fullheight">
+    <section class="hero is-fullheight is-dark">
         <div class="hero-body has-text-centered">
             <div class="container">
                 <content></content>
@@ -41,6 +42,11 @@
         moment.locale('fr-ca');
         riot.mount('*')
     </script>
+	<style>
+		.container {
+			font-family: 'Amatic SC', cursive;
+		}
+	</style>
 </body>
 </html>
 </DOCTYPE>
