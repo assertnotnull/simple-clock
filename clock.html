@@ -62,16 +62,16 @@
                 style="text-anchor: middle">{day}</text>
             </svg>
         </h1>
-
+            
         
-            var locale = "en-gb";          
-            this.time = moment().format('LTS');
-            this.date = moment().date();
-            this.day = moment().format('dddd');
-            this.month = moment().format('MMM')
+            var locale = "fr-ca";          
+            this.time = dayjs().format('HH:mm:ss');
+            this.date = dayjs().date();
+            this.day = dayjs().format('dddd');
+            this.month = dayjs().format('MMM')
 
             tick() {
-                this.update({ time: moment().format('LTS') });
+                this.update({ time: dayjs().format('HH:mm:ss') });
             }
 
             var timer = setInterval(this.tick, 1000);
@@ -84,9 +84,8 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.3.1/riot+compiler.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.7.5/dayjs.min.js"></script>
     <script>
-        moment.locale('fr-ca');
         riot.mount('*')
     </script>
 	<style>
